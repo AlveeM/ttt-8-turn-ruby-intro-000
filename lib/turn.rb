@@ -3,8 +3,11 @@ def turn(board)
   input = gets.strip
   input_idx = input_to_index(input)
   
-  if valid_move?(board, input)
-    
+  if valid_move?(board, input_idx)
+    move(board, input_idx)
+  else
+    turn(board)
+  end
 end
 
 def valid_move?(board, index)
